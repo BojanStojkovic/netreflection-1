@@ -1,0 +1,976 @@
+html{
+    font-size: 100%;
+    box-sizing: border-box;
+}
+*,*::before, *::after{
+    box-sizing: inherit;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Lato', sans-serif;
+}
+:root{
+    --Pcolor:  #0EAAFF;
+    --Scolor: #DFF6FF;
+    --Tcolor: #fff;
+    --Pffamily:'Rubik', sans-serif;
+}
+
+/*----HERO----*/
+
+.header{
+    min-height: 100vh;
+    width: 100%;
+    background-image:url(images/img1b.jpg);
+    background-position: center;
+    background-size: cover;
+    position: relative;
+}
+nav{
+    display: flex;
+    padding: 2% 6%;
+    justify-content: space-between;
+    align-items: center;
+}
+nav img {
+    width: 200px;
+}
+.nav-links{
+    flex: 1;
+    text-align: right;
+}
+.nav-links ul li {
+    list-style: none;
+    display: inline-block;
+    padding: 8px 14px;
+    position: relative;
+}
+.nav-links ul li a{
+    color: var(--Tcolor);
+    text-decoration: none;
+    font-size: 1.2rem;
+}
+.nav-links ul li::after{
+    content:'';
+    width: 0%;
+    height: 2.5px;
+    background: var(--Pcolor);
+    display: block;
+    margin: auto;
+    transition: 0.5s;
+    margin-top: 5px;
+}
+.nav-links ul li:hover::after{
+    width: 100%;
+}
+.text-box{
+    width: 90%;
+    color: var(--Tcolor);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+}
+.text-box h1{
+    font-size: 4rem;
+    font-family: var(--Pffamily)
+}
+.text-box p{
+    margin: 20px 0 40px;
+    font-size: 1.25rem;
+    color:var(--Scolor) ;
+}
+.hero-btn {
+    display: inline-block;
+    text-decoration: none;
+    color:var(--Tcolor);
+    border: 1px solid var(--Pcolor);
+    border-radius: 30px;
+    padding: 12px 34px;
+    font-size: 1.1rem;
+    background: transparent;
+    position: relative;
+    cursor: pointer;
+}
+.hero-btn:hover{
+    background: var(--Pcolor);
+    transition: 1s;
+}
+nav .fa{
+    display: none;
+}
+
+
+/*----ABOUT----*/
+
+.about{
+    background-image: url(Images/pozadina1.png);
+    background-position: center;
+    background-size: cover;
+    position: relative;
+}
+.row{
+    width: 80%;
+    height: auto;
+    margin: auto;
+    padding-top: 100px;
+    padding-bottom: 80px;
+    display: flex;
+    flex-basis: 48%;
+    justify-content: space-between;
+    gap: 4rem;
+}
+.about-col{
+    padding: 30px 0px;
+}
+#text{
+    height: auto;
+}
+.about-col h2{
+   color: var(--Tcolor);
+   font-family: var(--Pffamily);
+   font-size: 4rem;
+   font-weight: 300;
+   padding-left: 20px;
+}
+.web-business{
+    color: var(--Pcolor);
+}
+.about-col p{
+    color: var(--Scolor);
+    font-size: 1.5rem;
+    font-weight: 400;
+    line-height: 2rem;
+    text-align: justify;
+    margin-top: 50px;
+}
+#image img{
+    height: 90%;
+}
+#image{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+/*----SERVICES----*/
+.services{
+    width: 100%;
+    margin: auto;
+    text-align: center;
+    background-color: rgba(0, 15, 38);
+    border: rgba(0, 15, 38) solid;
+}
+.services h2{
+    color: var(--Tcolor);
+    font-family: var(--Pffamily);
+    font-size: 4rem;
+    font-weight: 300;
+    margin-top: 100px;
+    margin-bottom: 50px;
+}
+.services h2:after {
+    display: block;
+    height: 2px;
+    background-color: var(--Pcolor);
+    content:'';
+    width: 150px;
+    margin: 0 auto;
+    margin-top: 30px;
+}
+.services-col{
+    height: 550px;
+    position: relative;
+    overflow: hidden;   
+    object-fit: cover;
+}
+.services-col img{
+    /*--ovdje imam problem jer slika ne zauzima 100% širine sekcije .services-col, a .layer zauzima. --*/
+    height: 100%;
+    border-bottom-right-radius: 50px;
+}
+.layer {
+    background: transparent;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: 0.5s;
+    border-bottom-right-radius: 50px; 
+}
+.layer:hover{
+    background: rgba(2, 25, 61, 0.7);
+}
+.layer p{
+    width: 100%;
+    font-weight: 400;
+    font-size: 1.3rem;
+    line-height: 1.8rem;
+    text-align: justify;
+    padding: 40px;
+    color: var(--Scolor);
+    left: 50%;
+    transform: translateX(-50%);
+    position: absolute;
+    opacity: 0;
+    transition: 0.5s;
+}
+.layer p:hover{
+    opacity: 1;
+}
+.services-title{
+    color: var(--Scolor);
+    font-size: 2.1rem;
+    padding: 40px 0;
+    font-family: var(--Pffamily);
+    font-weight: 400;
+    letter-spacing: 2px;
+}
+.services-title:hover{
+    color: var(--Pcolor);
+}
+.card{
+    width: 30%;
+}
+
+
+/*----OUR GOAL----*/
+.our-goal{
+    width: 100%;
+    margin: auto;
+    text-align: center;
+    padding-top: 100px;
+    background-color: rgba(0, 15, 38);
+}
+.our-goal h2{
+    color: var(--Tcolor);
+    font-family: var(--Pffamily);
+    font-size: 4rem;
+    font-weight: 300;
+    margin-top: 100px;
+    margin-bottom: 50px;
+}
+.our-goal h2:after{
+    display: block;
+    height: 2px;
+    background-color: var(--Pcolor);
+    content:'';
+    width: 150px;
+    margin: 0 auto;
+    margin-top: 30px;
+}
+.our-goal-col{
+    flex-basis: 30%;
+    margin-bottom: 5%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+.our-goal-col img{
+    width: 70%;
+}
+.our-goal-col h3{
+    color: var(--Scolor);
+    font-family: var(--Pffamily);
+    font-size: 2.2rem;
+    font-weight: 400;
+    margin-top: 50px;
+}
+
+
+/*----CONTACT----*/
+.contact{
+    width: 100%;
+    margin: auto;
+    text-align: center;
+    padding-top: 100px;
+    padding-bottom: 50px;
+    background-color: rgba(0, 15, 38);
+    background-image: url(Images/pozadina2.png);
+}
+.contact h2{
+    color: var(--Tcolor);
+    font-family: var(--Pffamily);
+    font-size: 4rem;
+    font-weight: 300;
+    margin-top: 100px;
+    margin-bottom: 30px;
+}
+.contact h2:after{
+    display: block;
+    height: 2px;
+    background-color: var(--Pcolor);
+    content:'';
+    width: 150px;
+    margin: 0 auto;
+    margin-top: 30px;
+}
+.contact-content img{
+   margin-top: 100px; 
+}
+.contact-content h3{
+    color: var(--Scolor);
+    font-size: 2.2rem;
+    letter-spacing: 0.1rem;
+    font-weight: 600;
+    margin-top: 20px;
+}
+.paragraph{
+    color: var(--Tcolor);
+    font-size: 1.5rem;
+    font-weight: 300;
+    margin-top: 200px;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+}
+.paragraph p:hover{
+    color: var(--Pcolor);
+    cursor: pointer;
+    font-size: 1.55rem;
+}
+
+
+
+
+
+
+/*---- RESPONZIVNOST----*/
+@media(min-width: 2000px) {
+    /*--HERO--*/
+    nav img{
+        width: 300px;
+    }
+    .text-box h1{
+        font-size: 5rem;
+    }
+    .text-box p{
+        font-size: 2rem;
+        margin-top: 40px;
+        margin-bottom: 60px;
+    }
+    .hero-btn{
+        font-size: 1.6rem;
+    }
+    .nav-links ul li a{
+        font-size: 1.5rem;
+    }
+
+    /*--ABOUT--*/
+    .about-col p{
+        font-size: 1.8rem;
+        line-height: 2.2rem;
+    }
+
+    /*--SERVICES--*/
+    .services-col{
+        height: 850px;
+    }
+    .services-title{
+        font-size: 2.5rem;
+        padding: 50px 0;
+    }
+    .services h2{
+        font-size: 5rem;
+    }
+    .services h2:after {
+        width: 200px;
+    }
+    .layer p{
+        font-size: 1.8rem;
+        line-height: 2.4rem;
+        padding: 40px;
+    }
+    /*--OUR GOAL--*/
+    .our-goal h2{
+        font-size: 5rem;
+    }
+    .our-goal h2:after{
+        width: 200px;
+    }
+    .our-goal-col h3{
+        font-size: 2.8rem;
+        padding-top: 20px;
+    }
+    /*--CONTACT--*/
+    .contact h2{
+        font-size: 5rem;
+    }
+    .contact h2:after{
+        width: 200px;
+    }
+    .contact-content h3{
+        font-size: 2.5rem;
+    }
+    .paragraph{
+        font-size: 2rem;
+    }
+    .paragraph p:hover{
+        font-size: 2.05rem;
+    }
+}
+
+@media (min-width: 1200px) and (max-width: 2000px) {
+   
+  /*--HERO--*/
+  nav img{
+    width: 280px;
+    }
+.text-box h1{
+    font-size: 3.5rem;
+    }
+.text-box p{
+    font-size: 1.8rem;
+    margin-top: 30px;
+    margin-bottom: 50px;
+    }
+.hero-btn{
+    font-size: 1.5rem;
+    }   
+.nav-links ul li a{
+    font-size: 1.4rem;
+    }
+
+/*--ABOUT--*/
+.about-col h2{
+    font-size: 3.5rem;
+    }
+.about-col p{
+    font-size: 1.3rem;
+    line-height: 1.6rem;
+    padding: 0px 20px;
+    }
+#image{
+    width: 40%;
+    justify-content: flex-end;
+    align-items: flex-start;
+    padding-top: 80px;
+    } 
+#image img{
+    height: 70%;
+    margin-top: 0px;
+    } 
+.row{
+    gap: 1rem;
+    }
+ /*--SERVICES--*/
+ .services h2{
+    font-size: 3.5rem;
+    }
+    .services-title{
+        font-size: 1.9rem;
+    }
+    .services-col{
+        height: 450px;
+    }
+    .layer p{
+        font-size: 1rem;
+        line-height: 1.4rem;
+        padding: 20px;
+    }
+    /*--OUR GOAL--*/
+    .our-goal h2{
+        font-size: 3.5rem;
+    }
+    /*--CONTACT--*/
+    .contact h2{
+        font-size: 3.5rem;
+    }
+}
+     
+
+
+@media (min-width: 1024px) and (max-width: 1200px) {
+    /*--HERO--*/
+    .text-box h1{
+        font-size: 2.8rem;
+    }
+    .text-box p{
+        font-size:1.3rem;
+        line-height: 1.6rem;
+    }
+    nav img {
+        width: 180px;
+    }
+    .hero-btn {
+        font-size: 1.3rem;
+    } 
+
+     /*--ABOUT--*/
+     .about-col h2{
+        font-size: 2.8rem;
+        text-align: left;
+    }
+    .about-col p{
+        font-size: 1.3rem;
+        line-height: 1.6rem;
+        padding: 0px 20px;
+    }
+    #image{
+        width: 40%;
+        justify-content: center;
+        align-items: flex-start;
+        padding-top: 50px;
+        } 
+    #image img{
+        height: 70%;
+        margin-top: 0px;
+    } 
+    .row{
+        gap: 1rem;
+    }
+    /*--SERVICES--*/
+    .services h2{
+        font-size: 2.8rem;
+        margin-bottom: 40px;
+    }
+    .services h2:after {
+        margin-top: 30px;
+        width: 150px;
+    }
+    .services-title{
+        font-size: 1.7rem;
+        padding: 25px 0px 80px 0px;
+    }
+    .services-col{
+        height: 350px;
+    }
+    .layer p{
+        font-size: 1rem;
+        line-height: 1.4rem;
+        padding: 20px;
+    }
+    /*--OUR GOAL--*/
+    .our-goal h2{
+        font-size: 2.8rem;
+        margin-bottom: 40px;
+        margin-top: 0px;
+    }
+    .our-goal h2:after{
+        margin-top: 30px;
+        width: 150px;
+    }
+    .our-goal-col{
+        margin-bottom: 90px;
+    }
+    .our-goal-col img{
+        width: 200px;
+    }
+    .our-goal-col h3{
+        font-size: 2rem;
+        margin-top: 40px;
+    }
+
+    /*--CONTACT--*/
+    .contact h2{
+        font-size: 2.8rem;
+        margin-top: 40px;
+    }
+    .contact h2:after{
+        width: 150px;
+        margin-top: 30px;
+    }
+    .contact-content img{
+       margin-top: 120px;
+       width: 80px; 
+    }
+    .contact-content h3{
+        font-size: 1.7rem;
+        margin-top: 20px;
+    }
+    .paragraph{
+        font-size: 1.2rem;
+        margin-top: 100px;
+        gap: 2rem;
+    }
+    .paragraph p:hover{
+        font-size: 1.25rem;
+    }
+}
+
+@media(max-width: 1024px){
+   /*--ABOUT--*/
+   .row{
+    gap: 1rem;
+    }
+.about-col h2{
+    font-size: 2.4rem;
+    text-align: left;
+    }
+.about-col p{
+    font-size: 1.2rem;
+    line-height: 1.6rem;
+    padding: 0px 20px;
+    }
+#image{
+    width: 40%;
+    justify-content: center;
+    align-items: flex-start;
+    padding-top: 50px;
+    } 
+.layer p{
+    padding: 25px;
+    }
+}
+@media (min-width: 768px) and (max-width: 1024px) {
+     /*--HERO--*/
+     .text-box h1{
+        font-size: 2.4rem;
+        padding: 0px 20px;
+    }
+    .text-box p{
+        font-size:1.2rem;
+        line-height: 1.6rem;
+    }
+    nav img {
+        width: 180px;
+    }
+    .hero-btn {
+        font-size: 1.2rem;
+    } 
+
+    /*--ABOUT--*/
+    .about-col h2{
+        font-size: 2.4rem;
+        text-align: left;
+    }
+    .about-col p{
+        font-size: 1.2rem;
+        line-height: 1.6rem;
+        padding: 0px 20px;
+    }
+    #image{
+        width: 40%;
+    }
+    #image img{
+        height: 70%;
+        margin-top: 0px;
+    } 
+    
+     /*--SERVICES--*/
+     .services h2{
+        font-size: 2.4rem;
+        margin-bottom: 35px;
+    }
+    .services h2:after {
+        margin-top: 30px;
+        width: 100px;
+    }
+    .services-title{
+        font-size: 1.7rem;
+        padding: 25px 0px 80px 0px;
+    }
+    .services-col{
+        height: 350px;
+    }
+    .layer p{
+        font-size: 1rem;
+        line-height: 1.4rem;
+    }
+     /*--OUR GOAL--*/
+     .our-goal h2{
+        font-size: 2.4rem;
+        margin-bottom: 35px;
+        margin-top: 0px;
+    }
+    .our-goal h2:after{
+        margin-top: 30px;
+        width: 100px;
+    }
+    .our-goal-col{
+        margin-bottom: 90px;
+    }
+    .our-goal-col img{
+        width: 190px;
+    }
+    .our-goal-col h3{
+        font-size: 1.9rem;
+        margin-top: 40px;
+    }
+
+    /*--CONTACT--*/
+    .contact h2{
+        font-size: 2.4rem;
+        margin-top: 35px;
+    }
+    .contact h2:after{
+        width: 100px;
+        margin-top: 30px;
+    }
+    .contact-content img{
+       margin-top: 100px;
+       width: 80px; 
+    }
+    .contact-content h3{
+        font-size: 1.5rem;
+        margin-top: 20px;
+    }
+    .paragraph{
+        font-size: 1.2rem;
+        margin-top: 100px;
+        gap: 2rem;
+    }
+    .paragraph p:hover{
+        font-size: 1.25rem;
+    }
+}
+
+@media(max-width: 850px){
+    .nav-links ul li {
+        display: block;
+    }
+    .nav-links{
+        position: absolute;
+        background: var(--Pcolor);
+        height: 100vh;
+        width: 200px;
+        top: 0;
+        right:-200px;
+        text-align: left;
+        z-index: 2;
+        transition: 1s;
+    }
+    nav .fa{
+        display: block;
+        color: var(--Tcolor);
+        margin: 10px;
+        font-size: 1.3rem;
+        cursor: pointer;
+    }
+    .nav-links ul{
+        padding: 30px;
+    }
+    #image img{
+        width: 60%;
+    } 
+    #image{
+        justify-content: center;
+        align-items: flex-start;
+        width: 100%;
+        padding-top: 20px;
+    }
+    .about-col{
+        padding: 20px 0;
+    } 
+    .about-col h2{
+        text-align: center;
+    }
+    .card{
+        width: 80%;
+    }
+    .row{
+        gap: 0rem;
+        padding-bottom:60px;
+        display: flex;
+        flex-direction: column;
+        align-items: center; 
+     }
+}
+
+
+
+@media (min-width: 480px) and (max-width: 768px) {
+
+     /*--HERO--*/
+     .text-box h1{
+        font-size: 2.2rem;
+        padding: 0px 20px;
+    }
+    .text-box p{
+        font-size:1.1rem;
+        line-height: 1.4rem;
+    }
+    nav img {
+        width: 170px;
+    }
+    .hero-btn {
+        font-size: 1rem;
+    }  
+    
+    /*--ABOUT--*/
+    .about-col h2{
+        font-size: 2.2rem;
+    }
+    .about-col p{
+        font-size: 1.1rem;
+        line-height: 1.45rem;
+        padding: 0px 20px;
+    }
+
+    /*--SERVICES--*/
+    .services h2{
+        font-size: 2.2rem;
+        margin-bottom: 20px;
+    }
+    .services h2:after {
+        margin-top: 25px;
+        width: 100px;
+    }
+    .services-title{
+        font-size: 1.7rem;
+        padding: 25px 0px 80px 0px;
+    }
+    .services-col{
+        height: 350px;
+    }
+    .layer p{
+        font-size: 1rem;
+        line-height: 1.4rem;
+    }
+
+    /*--OUR GOAL--*/
+    .our-goal h2{
+        font-size: 2.2rem;
+        margin-bottom: 20px;
+        margin-top: 0px;
+    }
+    .our-goal h2:after{
+        margin-top: 20px;
+        width: 100px;
+    }
+    .our-goal-col{
+        margin-bottom: 90px;
+    }
+    .our-goal-col img{
+        width: 180px;
+    }
+    .our-goal-col h3{
+        font-size: 1.8rem;
+        margin-top: 40px;
+    }
+
+    /*--CONTACT--*/
+    .contact h2{
+        font-size: 2.2rem;
+        margin-top: 20px;
+    }
+    .contact h2:after{
+        width: 100px;
+        margin-top: 30px;
+    }
+    .contact-content img{
+       margin-top: 90px;
+       width: 70px; 
+    }
+    .contact-content h3{
+        font-size: 1.3rem;
+        margin-top: 10px;
+    }
+    .paragraph{
+        font-size: 1rem;
+        margin-top: 100px;
+        gap: 2rem;
+    }
+    .paragraph p:hover{
+        font-size: 1.05rem;
+    }
+}
+
+
+
+@media(max-width:480px) {
+
+    /*--HERO--*/
+    .text-box h1{
+        font-size: 2rem;
+        padding: 0px 20px;
+    }
+    .text-box p{
+        font-size:1rem;
+        line-height: 1.3rem;
+    }
+    nav img {
+        width: 160px;
+    }
+    .hero-btn {
+        font-size: 0.8rem;
+    }  
+
+    /*--ABOUT--*/
+    .about-col h2{
+        font-size: 2rem;
+    }
+    .about-col p{
+        font-size: 1rem;
+        line-height: 1.4rem;
+    }
+    #image{
+        padding-top: 10px;
+    }
+
+    /*--SERVICES--*/
+    .services h2{
+        font-size: 2rem;
+        margin-bottom: 0px;
+    }
+    .services h2:after {
+        margin-top: 20px;
+        width: 100px;
+    }
+    .services-title{
+        font-size: 1.5rem;
+        padding: 25px 0px 50px 0px;
+    }
+    .services-col{
+        height: 320px;
+    }
+    .layer p{
+        font-size: 0.8rem;
+        line-height: 1.1rem;
+    }
+
+    /*--OUR GOAL--*/
+    .our-goal h2{
+        font-size: 2rem;
+        margin-bottom: 0px;
+        margin-top: 0px;
+    }
+    .our-goal h2:after{
+        margin-top: 20px;
+        width: 100px;
+    }
+    .our-goal-col{
+        margin-bottom: 70px;
+    }
+    .our-goal-col img{
+        width: 50%;
+    }
+    .our-goal-col h3{
+        font-size: 1.5rem;
+        margin-top: 30px;
+    }
+
+    /*--CONTACT--*/
+    .contact h2{
+        font-size: 2rem;
+        margin-top: 0px;
+    }
+    .contact h2:after{
+        width: 100px;
+        margin-top: 30px;
+    }
+    .contact-content img{
+       margin-top: 80px;
+       width: 60px; 
+    }
+    .contact-content h3{
+        font-size: 1.3rem;
+        margin-top: 10px;
+    }
+    .paragraph{
+        font-size: 1rem;
+        margin-top: 100px;
+        gap: 2rem;
+    }
+    .paragraph p:hover{
+        font-size: 1.05rem;
+    }
+}
+
+    
